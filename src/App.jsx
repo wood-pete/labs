@@ -185,54 +185,56 @@ export default function App() {
             {placedCount} / {missingCells.length} placed
           </div>
         </div>
-        <div className="grid max-h-56 grid-cols-4 gap-1.5 overflow-y-auto sm:max-h-64 sm:grid-cols-8 lg:max-h-72 lg:grid-cols-10">
-          {tileDeck.map((tile) => {
-            const isPlaced = Boolean(placements[tile.id]);
-            const showClue = Boolean(clues[tile.id] || isPlaced);
-            const labelText = showClue ? tile.columnLabel : "";
-            return (
-              <div
-                key={tile.id}
-                draggable={!isPlaced}
-                onDragStart={(event) => {
-                  if (isPlaced) {
-                    event.preventDefault();
-                    return;
-                  }
-                  handleDragStart(event, tile.id);
-                }}
-                className={`relative flex flex-col justify-between rounded-md border px-1.5 py-1 text-left text-[9px] leading-tight transition sm:text-[10px] ${
-                  isPlaced
-                    ? "cursor-not-allowed border-green-400 bg-green-900/60 text-green-200"
-                    : "cursor-move border-red-300 bg-red-700 text-white hover:border-red-200 hover:bg-red-600"
-                }`}
-              >
-                <div className="pr-6 text-[10px] font-semibold text-inherit sm:text-xs">
-                  {tile.value}
+        <div className="max-h-56 overflow-y-auto pr-1 sm:max-h-64 lg:max-h-72">
+          <div className="grid grid-cols-4 gap-1.5 sm:grid-cols-8 lg:grid-cols-10">
+            {tileDeck.map((tile) => {
+              const isPlaced = Boolean(placements[tile.id]);
+              const showClue = Boolean(clues[tile.id] || isPlaced);
+              const labelText = showClue ? tile.columnLabel : "";
+              return (
+                <div
+                  key={tile.id}
+                  draggable={!isPlaced}
+                  onDragStart={(event) => {
+                    if (isPlaced) {
+                      event.preventDefault();
+                      return;
+                    }
+                    handleDragStart(event, tile.id);
+                  }}
+                  className={`relative flex flex-col justify-between rounded-md border px-1.5 py-1 text-left text-[9px] leading-tight transition sm:text-[10px] ${
+                    isPlaced
+                      ? "cursor-not-allowed border-green-400 bg-green-900/60 text-green-200"
+                      : "cursor-move border-red-300 bg-red-700 text-white hover:border-red-200 hover:bg-red-600"
+                  }`}
+                >
+                  <div className="pr-6 text-[10px] font-semibold text-inherit sm:text-xs">
+                    {tile.value}
+                  </div>
+                  {showClue ? (
+                    <span
+                      className={`mt-1 block text-[9px] font-bold uppercase tracking-wide sm:text-[10px] ${
+                        isPlaced ? "text-green-200" : "text-white"
+                      }`}
+                    >
+                      {labelText}
+                    </span>
+                  ) : (
+                    <span className="mt-1 block h-3" aria-hidden="true" />
+                  )}
+                  {!isPlaced && (
+                    <button
+                      type="button"
+                      onClick={(event) => handleClueClick(event, tile.id)}
+                      className="absolute bottom-1 right-1 rounded bg-white px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-red-600 shadow-sm hover:bg-stone-100 focus:outline-none focus:ring-1 focus:ring-red-400"
+                    >
+                      Clue
+                    </button>
+                  )}
                 </div>
-                {showClue ? (
-                  <span
-                    className={`mt-1 block text-[9px] font-bold uppercase tracking-wide sm:text-[10px] ${
-                      isPlaced ? "text-green-200" : "text-white"
-                    }`}
-                  >
-                    {labelText}
-                  </span>
-                ) : (
-                  <span className="mt-1 block h-3" aria-hidden="true" />
-                )}
-                {!isPlaced && (
-                  <button
-                    type="button"
-                    onClick={(event) => handleClueClick(event, tile.id)}
-                    className="absolute bottom-1 right-1 rounded bg-white px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-red-600 shadow-sm hover:bg-stone-100 focus:outline-none focus:ring-1 focus:ring-red-400"
-                  >
-                    Clue
-                  </button>
-                )}
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </section>
 
