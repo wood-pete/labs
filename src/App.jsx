@@ -185,7 +185,7 @@ export default function App() {
             {placedCount} / {missingCells.length} placed
           </div>
         </div>
-        <div className="grid h-48 grid-cols-4 gap-1.5 overflow-hidden sm:grid-cols-8 lg:grid-cols-10">
+        <div className="grid max-h-56 grid-cols-4 gap-1.5 overflow-y-auto sm:max-h-64 sm:grid-cols-8 lg:max-h-72 lg:grid-cols-10">
           {tileDeck.map((tile) => {
             const isPlaced = Boolean(placements[tile.id]);
             const showClue = Boolean(clues[tile.id] || isPlaced);
@@ -201,7 +201,7 @@ export default function App() {
                   }
                   handleDragStart(event, tile.id);
                 }}
-                className={`relative flex h-full flex-col justify-between rounded-md border px-1.5 py-1 text-left text-[9px] leading-tight transition sm:text-[10px] ${
+                className={`relative flex flex-col justify-between rounded-md border px-1.5 py-1 text-left text-[9px] leading-tight transition sm:text-[10px] ${
                   isPlaced
                     ? "cursor-not-allowed border-green-400 bg-green-900/60 text-green-200"
                     : "cursor-move border-red-300 bg-red-700 text-white hover:border-red-200 hover:bg-red-600"
