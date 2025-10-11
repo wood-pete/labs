@@ -60,8 +60,10 @@ function HomeShell() {
 
 function SubPageShell({ children }) {
   return (
-    <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-8 pt-6 sm:px-6 lg:px-8">
-      <div className="flex-1">{children}</div>
+    <div className="mx-auto flex h-screen w-full flex-col px-4 pb-6 pt-6 sm:px-6 lg:px-10">
+      <div className="flex h-full min-h-0 flex-1 flex-col overflow-hidden">
+        {children}
+      </div>
     </div>
   );
 }

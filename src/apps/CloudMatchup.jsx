@@ -167,8 +167,8 @@ export default function CloudMatchupApp() {
   const allMatched = placedCount === missingCells.length;
 
   return (
-    <div className="box-border flex min-h-[70vh] flex-col gap-4 overflow-hidden bg-gradient-to-b from-black via-orange-950 to-red-950 p-3 text-stone-100 sm:p-4">
-      <header className="mx-auto max-w-full flex-shrink-0 space-y-2">
+    <div className="box-border flex h-full min-h-0 flex-1 flex-col gap-6 overflow-hidden bg-gradient-to-b from-black via-orange-950 to-red-950 px-3 pb-6 pt-4 text-stone-100 sm:px-6 sm:pb-8 sm:pt-6">
+      <header className="flex-shrink-0 space-y-2">
         <div className="flex flex-wrap items-center gap-3">
           <Link
             to="/"
@@ -187,7 +187,7 @@ export default function CloudMatchupApp() {
         </p>
       </header>
 
-      <section className="flex-shrink-0 rounded-lg border border-red-700 bg-black/60 p-3 shadow-lg shadow-red-900/40 backdrop-blur-sm sm:p-4">
+      <section className="flex-shrink-0 rounded-2xl border border-red-700 bg-black/70 p-3 shadow-lg shadow-red-900/40 backdrop-blur-sm sm:p-4">
         <div className="mb-2 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-orange-200">Missing Tiles</h2>
           <div className="text-sm text-stone-200">
@@ -247,113 +247,115 @@ export default function CloudMatchupApp() {
         </div>
       </section>
 
-      <section className="flex-1 overflow-hidden rounded-lg border border-red-800 bg-black/70 shadow-xl shadow-red-900/40 backdrop-blur sm:border-red-600">
-        <div className="h-full overflow-auto">
-          <table className="min-w-full border-collapse text-sm">
-            <thead className="sticky top-0 bg-gradient-to-r from-red-700 to-orange-600 text-left text-white">
-              <tr>
-                {columns.map((column) => (
-                  <th
-                    key={column.key}
-                    className="px-3 py-2 font-medium uppercase tracking-wide"
-                  >
-                    {column.label}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {categories.map((row, rowIndex) => (
-                <tr
-                  key={row.category}
-                  className="border-b border-red-900/60 last:border-none"
-                >
-                  <td className="bg-black/60 px-3 py-2 font-medium text-orange-200">
-                    {row.category}
-                  </td>
-                  {playableColumns.map((column) => {
-                    const cellId = `${rowIndex}-${column.key}`;
-                    const isMissing = Boolean(missingLookup[cellId]);
-                    const isFilled = placements[cellId];
-                    return (
-                      <td key={column.key} className="px-3 py-2 align-top">
-                        {isMissing ? (
-                          <div
-                            onDragOver={(event) => event.preventDefault()}
-                            onDrop={(event) => handleDrop(event, cellId)}
-                            className={`flex min-h-[72px] items-center justify-center rounded-md border p-2 text-center transition ${
-                              isFilled
-                                ? "border-green-400 bg-green-900/60 text-green-200"
-                                : "border-dashed border-red-500 bg-black/60 text-orange-100"
-                            }`}
-                          >
-                            {isFilled
-                              ? missingLookup[cellId].value
-                              : "Drop tile here"}
-                          </div>
-                        ) : (
-                          <div className="min-h-[72px] rounded-md border border-transparent bg-black/50 p-2 text-stone-200">
-                            {row[column.key]}
-                          </div>
-                        )}
-                      </td>
-                    );
-                  })}
+      <section className="flex-1 min-h-0 overflow-hidden rounded-2xl border border-red-800 bg-black/80 shadow-xl shadow-red-900/40 backdrop-blur sm:border-red-600">
+        <div className="flex h-full flex-col">
+          <div className="flex-1 min-h-0 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4">
+            <table className="min-w-full border-collapse text-sm">
+              <thead className="sticky top-0 bg-gradient-to-r from-red-700 to-orange-600 text-left text-white">
+                <tr>
+                  {columns.map((column) => (
+                    <th
+                      key={column.key}
+                      className="px-3 py-2 font-medium uppercase tracking-wide"
+                    >
+                      {column.label}
+                    </th>
+                  ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {categories.map((row, rowIndex) => (
+                  <tr
+                    key={row.category}
+                    className="border-b border-red-900/60 last:border-none"
+                  >
+                    <td className="bg-black/60 px-3 py-2 font-medium text-orange-200">
+                      {row.category}
+                    </td>
+                    {playableColumns.map((column) => {
+                      const cellId = `${rowIndex}-${column.key}`;
+                      const isMissing = Boolean(missingLookup[cellId]);
+                      const isFilled = placements[cellId];
+                      return (
+                        <td key={column.key} className="px-3 py-2 align-top">
+                          {isMissing ? (
+                            <div
+                              onDragOver={(event) => event.preventDefault()}
+                              onDrop={(event) => handleDrop(event, cellId)}
+                              className={`flex min-h-[72px] items-center justify-center rounded-md border p-2 text-center transition ${
+                                isFilled
+                                  ? "border-green-400 bg-green-900/60 text-green-200"
+                                  : "border-dashed border-red-500 bg-black/60 text-orange-100"
+                              }`}
+                            >
+                              {isFilled
+                                ? missingLookup[cellId].value
+                                : "Drop tile here"}
+                            </div>
+                          ) : (
+                            <div className="min-h-[72px] rounded-md border border-transparent bg-black/50 p-2 text-stone-200">
+                              {row[column.key]}
+                            </div>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
-      <footer className="flex-shrink-0 space-y-3">
-        {feedback ? (
-          <div
-            className={`rounded-md border px-4 py-3 text-sm ${
-              feedback.type === "success"
-                ? "border-green-400 bg-green-900/60 text-green-200"
-                : feedback.type === "info"
-                  ? "border-red-600 bg-black/70 text-stone-200"
-                  : "border-red-500 bg-red-950/80 text-red-200"
-            }`}
-          >
-            {feedback.message}
-          </div>
-        ) : (
-          <div className="rounded-md border border-red-700 bg-black/70 px-4 py-3 text-sm text-stone-200">
-            Tip: match by thinking about which vendor offers the capability
-            described on each tile.
-          </div>
-        )}
+      <footer className="flex-shrink-0 rounded-2xl border border-red-900/70 bg-black/80 shadow-lg shadow-red-900/40 backdrop-blur">
+        <div className="flex flex-col gap-2">
+          {feedback ? (
+            <div
+              className={`rounded-md border px-3 py-2 text-sm ${
+                feedback.type === "success"
+                  ? "border-green-400 bg-green-900/60 text-green-200"
+                  : feedback.type === "info"
+                    ? "border-red-600 bg-black/70 text-stone-200"
+                    : "border-red-500 bg-red-950/80 text-red-200"
+              }`}
+            >
+              {feedback.message}
+            </div>
+          ) : (
+            <div className="rounded-md border border-red-700 bg-black/70 px-3 py-2 text-sm text-stone-200">
+              Tip: match by thinking about which vendor offers the capability described on each tile.
+            </div>
+          )}
 
-        {allMatched && (
-          <div className="rounded-md border border-orange-300 bg-orange-100/20 px-4 py-3 text-sm font-medium text-orange-200">
-            Fantastic! You matched every capability. Try a fresh board to test
-            again.
-          </div>
-        )}
+          {allMatched && (
+            <div className="rounded-md border border-orange-300 bg-orange-100/20 px-3 py-2 text-sm font-medium text-orange-200">
+              Fantastic! You matched every capability. Try a fresh board to test again.
+            </div>
+          )}
 
-        <div className="flex gap-2">
-          <button
-            type="button"
-            onClick={handleReset}
-            className="rounded-md bg-gradient-to-r from-red-600 to-orange-500 px-4 py-2 text-sm font-semibold text-white shadow hover:from-red-500 hover:to-orange-400"
-          >
-            Reset with new gaps
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              clearAllClueTimers();
-              setClues({});
-              setPlacements({});
-              setTileDeck(shuffle([...missingCells]));
-              setFeedback(null);
-            }}
-            className="rounded-md border border-red-600 px-4 py-2 text-sm font-medium text-orange-100 hover:bg-black/60"
-          >
-            Clear placements
-          </button>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={handleReset}
+              className="rounded-md bg-gradient-to-r from-red-600 to-orange-500 px-4 py-2 text-sm font-semibold text-white shadow hover:from-red-500 hover:to-orange-400"
+            >
+              Reset with new gaps
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                clearAllClueTimers();
+                setClues({});
+                setPlacements({});
+                setTileDeck(shuffle([...missingCells]));
+                setFeedback(null);
+              }}
+              className="rounded-md border border-red-600 px-4 py-2 text-sm font-medium text-orange-100 hover:bg-black/60"
+            >
+              Clear placements
+            </button>
+          </div>
         </div>
       </footer>
     </div>
