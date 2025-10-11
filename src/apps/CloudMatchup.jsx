@@ -167,7 +167,7 @@ export default function CloudMatchupApp() {
   const allMatched = placedCount === missingCells.length;
 
   return (
-    <div className="box-border flex h-full min-h-0 flex-1 flex-col gap-6 overflow-hidden bg-gradient-to-b from-black via-orange-950 to-red-950 px-3 pb-6 pt-4 text-stone-100 sm:px-6 sm:pb-8 sm:pt-6">
+    <div className="box-border flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gradient-to-b from-black via-orange-950 to-red-950 px-3 pb-0 pt-3 text-stone-100 sm:px-6 sm:pb-0 sm:pt-5">
       <header className="flex-shrink-0 space-y-2">
         <div className="flex flex-wrap items-center gap-3">
           <Link
@@ -187,7 +187,7 @@ export default function CloudMatchupApp() {
         </p>
       </header>
 
-      <section className="flex-shrink-0 rounded-2xl border border-red-700 bg-black/70 p-3 shadow-lg shadow-red-900/40 backdrop-blur-sm sm:p-4">
+      <section className="mt-3 flex-shrink-0 rounded-2xl border border-red-700 bg-black/70 p-3 shadow-lg shadow-red-900/40 backdrop-blur-sm sm:p-4">
         <div className="mb-2 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-orange-200">Missing Tiles</h2>
           <div className="text-sm text-stone-200">
@@ -247,7 +247,7 @@ export default function CloudMatchupApp() {
         </div>
       </section>
 
-      <section className="flex-1 min-h-0 overflow-hidden rounded-2xl border border-red-800 bg-black/80 shadow-xl shadow-red-900/40 backdrop-blur sm:border-red-600">
+      <section className="mt-3 flex-1 min-h-0 overflow-hidden rounded-2xl border border-red-800 bg-black/80 shadow-xl shadow-red-900/40 backdrop-blur sm:border-red-600">
         <div className="flex h-full flex-col">
           <div className="flex-1 min-h-0 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4">
             <table className="min-w-full border-collapse text-sm">
@@ -308,8 +308,8 @@ export default function CloudMatchupApp() {
         </div>
       </section>
 
-      <footer className="flex-shrink-0 rounded-2xl border border-red-900/70 bg-black/80 shadow-lg shadow-red-900/40 backdrop-blur">
-        <div className="flex flex-col gap-2">
+      <footer className="mt-3 flex-shrink-0 rounded-t-2xl border border-red-900/70 bg-black/80 shadow-lg shadow-red-900/40 backdrop-blur">
+        <div className="flex flex-col gap-2 px-3 pb-1 pt-2 sm:px-4 sm:pb-1">
           {feedback ? (
             <div
               className={`rounded-md border px-3 py-2 text-sm ${
