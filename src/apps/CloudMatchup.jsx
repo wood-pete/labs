@@ -167,9 +167,9 @@ export default function CloudMatchupApp() {
   const allMatched = placedCount === missingCells.length;
 
   return (
-    <div className="box-border flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-gradient-to-b from-black via-orange-950 to-red-950 px-3 pb-0 pt-3 text-stone-100 sm:px-6 sm:pb-0 sm:pt-5">
-      <header className="flex-shrink-0 space-y-2">
-        <div className="flex flex-wrap items-center gap-3">
+    <div className="box-border flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-black px-1 pb-0 pt-2 text-stone-100 sm:px-2 sm:pb-0 sm:pt-4">
+      <header className="flex-shrink-0 space-y-1.5">
+        <div className="flex flex-wrap items-center gap-2">
           <Link
             to="/"
             className="inline-flex h-8 items-center justify-center rounded-full border border-orange-400/70 bg-black/70 px-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-orange-200 shadow shadow-black/40 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black sm:h-9 sm:px-4 sm:text-xs"
@@ -187,7 +187,7 @@ export default function CloudMatchupApp() {
         </p>
       </header>
 
-      <section className="mt-3 flex-shrink-0 rounded-2xl border border-red-700 bg-black/70 p-3 shadow-lg shadow-red-900/40 backdrop-blur-sm sm:p-4">
+      <section className="mt-2.5 flex-shrink-0 rounded-2xl border border-red-700 bg-black p-3 sm:p-4">
         <div className="mb-2 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-orange-200">Missing Tiles</h2>
           <div className="text-sm text-stone-200">
@@ -214,7 +214,7 @@ export default function CloudMatchupApp() {
                   className={`relative flex flex-col justify-between rounded-md border px-1.5 py-1 text-left text-[9px] leading-tight transition sm:text-[10px] ${
                     isPlaced
                       ? "cursor-not-allowed border-green-400 bg-green-900/60 text-green-200"
-                      : "cursor-move border-red-300 bg-gradient-to-br from-red-600 to-orange-500 text-white hover:from-red-500 hover:to-orange-400"
+                      : "cursor-move border-red-300 bg-red-600 text-white hover:bg-red-500"
                   }`}
                 >
                   <div className="pr-6 text-[10px] font-semibold text-inherit sm:text-xs">
@@ -247,7 +247,7 @@ export default function CloudMatchupApp() {
         </div>
       </section>
 
-      <section className="mt-3 flex-1 min-h-0 overflow-hidden rounded-2xl border border-red-800 bg-black/80 shadow-xl shadow-red-900/40 backdrop-blur sm:border-red-600">
+      <section className="mt-2.5 flex-1 min-h-0 overflow-hidden rounded-2xl border border-red-800 bg-black/80 shadow-xl shadow-red-900/40 backdrop-blur sm:border-red-600">
         <div className="flex h-full flex-col">
           <div className="flex-1 min-h-0 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4">
             <table className="min-w-full border-collapse text-sm">
@@ -308,7 +308,7 @@ export default function CloudMatchupApp() {
         </div>
       </section>
 
-      <footer className="mt-3 flex-shrink-0 rounded-t-2xl border border-red-900/70 bg-black/80 shadow-lg shadow-red-900/40 backdrop-blur">
+      <footer className="mt-2.5 flex-shrink-0 rounded-t-2xl border border-red-900/70 bg-black/80 shadow-lg shadow-red-900/40 backdrop-blur">
         <div className="flex flex-col gap-2 px-3 pb-1 pt-2 sm:px-4 sm:pb-1">
           {feedback ? (
             <div
