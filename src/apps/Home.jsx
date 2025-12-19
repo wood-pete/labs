@@ -22,7 +22,7 @@ export default function Home() {
       <section className="flex flex-col gap-12 p-6 sm:p-10 lg:p-16">
         <div className="max-w-2xl space-y-4">
           <h2 className="text-3xl font-semibold text-orange-200 sm:text-4xl">
-            Ignite Your Next Micro App
+            Academy Labs Hub
           </h2>
           <p className="text-base text-stone-300 sm:text-lg">
             This hub keeps every experiment within reach. Browse the gallery,
