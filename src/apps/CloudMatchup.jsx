@@ -167,30 +167,30 @@ export default function CloudMatchupApp() {
   const allMatched = placedCount === missingCells.length;
 
   return (
-    <div className="box-border flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-black px-1 pb-0 pt-2 text-stone-100 sm:px-2 sm:pb-0 sm:pt-4">
-      <header className="flex-shrink-0 space-y-1.5">
-        <div className="flex flex-wrap items-center gap-2">
+    <div className="box-border flex h-full min-h-0 flex-1 flex-col overflow-hidden bg-[#f5f5f5] px-1 pb-0 pt-2 text-neutral-900 sm:px-2 sm:pb-0 sm:pt-4">
+      <header className="flex-shrink-0 space-y-2">
+        <div className="flex flex-wrap items-center gap-3">
           <Link
             to="/"
-            className="inline-flex h-8 items-center justify-center rounded-full border border-orange-400/70 bg-black/70 px-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-orange-200 shadow shadow-black/40 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black sm:h-9 sm:px-4 sm:text-xs"
+            className="inline-flex h-8 items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 px-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:h-9 sm:px-4 sm:text-xs"
           >
             Home
           </Link>
-          <h1 className="text-2xl font-semibold text-orange-300 sm:text-3xl">
+          <h1 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">
             Cloud Platform Match-Up
           </h1>
         </div>
-        <p className="text-xs text-stone-300 sm:text-sm">
+        <p className="text-xs text-neutral-600 sm:text-sm">
           Drag the missing platform capabilities onto the correct provider
           column. Each tile can only live in one spot, and there are{" "}
           {missingCells.length} gaps to fill.
         </p>
       </header>
 
-      <section className="mt-2.5 flex-shrink-0 rounded-2xl border border-red-700 bg-black p-3 sm:p-4">
+      <section className="mt-2.5 flex-shrink-0 rounded-2xl border border-neutral-200 bg-white p-3 shadow-[0_10px_28px_rgba(0,0,0,0.06)] sm:p-4">
         <div className="mb-2 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-orange-200">Missing Tiles</h2>
-          <div className="text-sm text-stone-200">
+          <h2 className="text-lg font-semibold text-neutral-900">Missing Tiles</h2>
+          <div className="text-sm text-neutral-700">
             {placedCount} / {missingCells.length} placed
           </div>
         </div>
@@ -213,8 +213,8 @@ export default function CloudMatchupApp() {
                   }}
                   className={`relative flex flex-col justify-between rounded-md border px-1.5 py-1 text-left text-[9px] leading-tight transition sm:text-[10px] ${
                     isPlaced
-                      ? "cursor-not-allowed border-green-400 bg-green-900/60 text-green-200"
-                      : "cursor-move border-red-300 bg-red-600 text-white hover:bg-red-500"
+                      ? "cursor-not-allowed border-green-500 bg-green-50 text-green-800"
+                      : "cursor-move border-red-600 bg-red-600 text-white shadow-[0_6px_16px_rgba(225,6,0,0.25)] hover:bg-red-500"
                   }`}
                 >
                   <div className="pr-6 text-[10px] font-semibold text-inherit sm:text-xs">
@@ -223,7 +223,7 @@ export default function CloudMatchupApp() {
                   {showClue ? (
                     <span
                       className={`mt-1 block text-[9px] font-bold uppercase tracking-wide sm:text-[10px] ${
-                        isPlaced ? "text-green-200" : "text-white"
+                        isPlaced ? "text-green-800" : "text-white"
                       }`}
                     >
                       {labelText}
@@ -235,7 +235,7 @@ export default function CloudMatchupApp() {
                     <button
                       type="button"
                       onClick={(event) => handleClueClick(event, tile.id)}
-                      className="absolute bottom-1 right-1 rounded bg-white/90 px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-red-600 shadow-sm hover:bg-white focus:outline-none focus:ring-1 focus:ring-orange-400"
+                      className="absolute bottom-1 right-1 rounded bg-white px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wide text-red-700 shadow-sm ring-1 ring-neutral-200 hover:bg-neutral-50 focus:outline-none focus:ring-1 focus:ring-red-600"
                     >
                       Clue
                     </button>
@@ -247,16 +247,16 @@ export default function CloudMatchupApp() {
         </div>
       </section>
 
-      <section className="mt-2.5 flex-1 min-h-0 overflow-hidden rounded-2xl border border-red-800 bg-black/80 shadow-xl shadow-red-900/40 backdrop-blur sm:border-red-600">
+      <section className="mt-2.5 flex-1 min-h-0 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-[0_16px_48px_rgba(0,0,0,0.08)]">
         <div className="flex h-full flex-col">
           <div className="flex-1 min-h-0 overflow-y-auto px-3 py-3 sm:px-4 sm:py-4">
             <table className="min-w-full border-collapse text-sm">
-              <thead className="sticky top-0 bg-gradient-to-r from-red-700 to-orange-600 text-left text-white">
+              <thead className="sticky top-0 bg-neutral-900 text-left text-white">
                 <tr>
                   {columns.map((column) => (
                     <th
                       key={column.key}
-                      className="px-3 py-2 font-medium uppercase tracking-wide"
+                      className="px-3 py-2 font-semibold uppercase tracking-wide"
                     >
                       {column.label}
                     </th>
@@ -265,11 +265,8 @@ export default function CloudMatchupApp() {
               </thead>
               <tbody>
                 {categories.map((row, rowIndex) => (
-                  <tr
-                    key={row.category}
-                    className="border-b border-red-900/60 last:border-none"
-                  >
-                    <td className="bg-black/60 px-3 py-2 font-medium text-orange-200">
+                  <tr key={row.category} className="border-b border-neutral-200 last:border-none">
+                    <td className="bg-neutral-50 px-3 py-2 font-semibold text-neutral-900">
                       {row.category}
                     </td>
                     {playableColumns.map((column) => {
@@ -284,8 +281,8 @@ export default function CloudMatchupApp() {
                               onDrop={(event) => handleDrop(event, cellId)}
                               className={`flex min-h-[72px] items-center justify-center rounded-md border p-2 text-center transition ${
                                 isFilled
-                                  ? "border-green-400 bg-green-900/60 text-green-200"
-                                  : "border-dashed border-red-500 bg-black/60 text-orange-100"
+                                  ? "border-green-500 bg-green-50 text-green-800"
+                                  : "border-dashed border-neutral-300 bg-neutral-50 text-neutral-500"
                               }`}
                             >
                               {isFilled
@@ -293,7 +290,7 @@ export default function CloudMatchupApp() {
                                 : "Drop tile here"}
                             </div>
                           ) : (
-                            <div className="min-h-[72px] rounded-md border border-transparent bg-black/50 p-2 text-stone-200">
+                            <div className="min-h-[72px] rounded-md border border-transparent bg-neutral-50 p-2 text-neutral-800">
                               {row[column.key]}
                             </div>
                           )}
@@ -308,28 +305,28 @@ export default function CloudMatchupApp() {
         </div>
       </section>
 
-      <footer className="mt-2.5 flex-shrink-0 rounded-t-2xl border border-red-900/70 bg-black/80 shadow-lg shadow-red-900/40 backdrop-blur">
+      <footer className="mt-2.5 flex-shrink-0 rounded-t-2xl border border-neutral-200 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.08)]">
         <div className="flex flex-col gap-2 px-3 pb-1 pt-2 sm:px-4 sm:pb-1">
           {feedback ? (
             <div
               className={`rounded-md border px-3 py-2 text-sm ${
                 feedback.type === "success"
-                  ? "border-green-400 bg-green-900/60 text-green-200"
+                  ? "border-green-500 bg-green-50 text-green-800"
                   : feedback.type === "info"
-                    ? "border-red-600 bg-black/70 text-stone-200"
-                    : "border-red-500 bg-red-950/80 text-red-200"
+                    ? "border-neutral-300 bg-neutral-50 text-neutral-700"
+                    : "border-red-500 bg-red-50 text-red-700"
               }`}
             >
               {feedback.message}
             </div>
           ) : (
-            <div className="rounded-md border border-red-700 bg-black/70 px-3 py-2 text-sm text-stone-200">
+            <div className="rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm text-neutral-700">
               Tip: match by thinking about which vendor offers the capability described on each tile.
             </div>
           )}
 
           {allMatched && (
-            <div className="rounded-md border border-orange-300 bg-orange-100/20 px-3 py-2 text-sm font-medium text-orange-200">
+            <div className="rounded-md border border-green-500/80 bg-green-50 px-3 py-2 text-sm font-medium text-green-800">
               Fantastic! You matched every capability. Try a fresh board to test again.
             </div>
           )}
@@ -338,7 +335,7 @@ export default function CloudMatchupApp() {
             <button
               type="button"
               onClick={handleReset}
-              className="rounded-md bg-gradient-to-r from-red-600 to-orange-500 px-4 py-2 text-sm font-semibold text-white shadow hover:from-red-500 hover:to-orange-400"
+              className="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_6px_16px_rgba(225,6,0,0.25)] hover:bg-red-500"
             >
               Reset with new gaps
             </button>
@@ -351,7 +348,7 @@ export default function CloudMatchupApp() {
                 setTileDeck(shuffle([...missingCells]));
                 setFeedback(null);
               }}
-              className="rounded-md border border-red-600 px-4 py-2 text-sm font-medium text-orange-100 hover:bg-black/60"
+              className="rounded-md border border-neutral-900 px-4 py-2 text-sm font-semibold text-neutral-900 hover:border-red-600 hover:text-red-700"
             >
               Clear placements
             </button>

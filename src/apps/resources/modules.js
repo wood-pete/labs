@@ -15,7 +15,7 @@ export const modules = [
     order: 1,
     title: "Introduction and Overview",
     summary: "Kick off the academy with welcome, journey framing, and how to use the program.",
-    accent: "from-orange-400/80 via-red-500/80 to-red-700/80",
+    accent: "from-neutral-900/70 via-neutral-800/60 to-red-600/70",
     badge: "Section 1",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
@@ -26,7 +26,7 @@ export const modules = [
     order: 2,
     title: "Designing Your Future",
     summary: "Orient your career goals and design an unforgettable path forward.",
-    accent: "from-amber-400/80 via-orange-500/80 to-red-700/80",
+    accent: "from-neutral-900/70 via-red-700/60 to-neutral-800/60",
     badge: "Section 2",
     image:
       "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=800&q=80",
@@ -37,7 +37,7 @@ export const modules = [
     order: 3,
     title: "Industry Insider Secrets",
     summary: "Decode industries, research landscapes, and make insights relevant.",
-    accent: "from-red-400/80 via-orange-500/70 to-orange-700/80",
+    accent: "from-neutral-900/70 via-neutral-700/60 to-red-700/70",
     badge: "Section 3",
     image:
       "https://images.unsplash.com/photo-1454165205744-3b78555e5572?auto=format&fit=crop&w=800&q=80",
@@ -48,7 +48,7 @@ export const modules = [
     order: 4,
     title: "Critical Thinking Accelerators",
     summary: "Handle ambiguity with models, storytelling, and structured decisions.",
-    accent: "from-orange-500/80 via-red-500/70 to-amber-400/70",
+    accent: "from-neutral-900/70 via-neutral-800/60 to-red-500/70",
     badge: "Section 4",
     image:
       "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&w=800&q=80",
@@ -59,7 +59,7 @@ export const modules = [
     order: 5,
     title: "Building Data Literacy",
     summary: "Learn data language, storage choices, architectures, and failure modes.",
-    accent: "from-amber-500/80 via-orange-500/70 to-red-700/70",
+    accent: "from-neutral-900/70 via-neutral-700/60 to-red-600/70",
     badge: "Section 5",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
@@ -70,7 +70,7 @@ export const modules = [
     order: 6,
     title: "Cheat Your Way Through ETL",
     summary: "Accelerate ETL with shortcuts, platform know-how, and lab practice.",
-    accent: "from-red-500/80 via-orange-500/70 to-amber-400/70",
+    accent: "from-neutral-900/70 via-neutral-800/60 to-red-500/70",
     badge: "Section 6",
     image:
       "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=800&q=80",
@@ -81,7 +81,7 @@ export const modules = [
     order: 7,
     title: "Engineering Essentials",
     summary: "Git, CI/CD, DevOps shortcuts, MLOps, containers, and Kubernetes quick wins.",
-    accent: "from-orange-500/80 via-red-500/70 to-orange-700/80",
+    accent: "from-neutral-900/70 via-neutral-700/60 to-red-700/70",
     badge: "Section 7",
     image:
       "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
@@ -92,7 +92,7 @@ export const modules = [
     order: 8,
     title: "The Modern Makeup of Methodologies",
     summary: "Choose and tailor frameworks across agile, POLDAT, TOGAF, and governance.",
-    accent: "from-red-500/80 via-orange-500/70 to-amber-400/70",
+    accent: "from-neutral-900/70 via-neutral-800/60 to-red-500/70",
     badge: "Section 8",
     image:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
@@ -103,7 +103,7 @@ export const modules = [
     order: 9,
     title: "The Rise of Autonomous Agentic Analytics",
     summary: "Explore LLM fundamentals, orchestration, agents, governance, and RAG.",
-    accent: "from-amber-500/80 via-orange-500/70 to-red-700/70",
+    accent: "from-neutral-900/70 via-neutral-700/60 to-red-600/70",
     badge: "Section 9",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
@@ -114,7 +114,7 @@ export const modules = [
     order: 10,
     title: "The Resilient Career Playbook",
     summary: "Build a standout portfolio, craft your narrative, and interview with confidence.",
-    accent: "from-orange-400/80 via-red-500/70 to-red-800/80",
+    accent: "from-neutral-900/70 via-neutral-800/60 to-red-700/70",
     badge: "Section 10",
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",

@@ -130,13 +130,13 @@ function renderInline(text) {
     switch (segment.type) {
       case "strong":
         return (
-          <strong key={index} className="font-semibold text-orange-100">
+          <strong key={index} className="font-semibold text-red-700">
             {segment.text}
           </strong>
         );
       case "em":
         return (
-          <em key={index} className="text-stone-100/90">
+          <em key={index} className="text-neutral-800">
             {segment.text}
           </em>
         );
@@ -144,7 +144,7 @@ function renderInline(text) {
         return (
           <code
             key={index}
-            className="rounded bg-stone-900 px-1.5 py-0.5 text-orange-200 shadow-inner shadow-black/50"
+            className="rounded bg-neutral-100 px-1.5 py-0.5 text-red-700 shadow-inner shadow-black/10"
           >
             {segment.text}
           </code>
@@ -156,7 +156,7 @@ function renderInline(text) {
             href={segment.href}
             target="_blank"
             rel="noreferrer"
-            className="font-medium text-orange-200 underline decoration-orange-400/70 decoration-2 underline-offset-4 transition hover:text-white"
+            className="font-medium text-red-700 underline decoration-red-500 decoration-2 underline-offset-4 transition hover:text-red-600"
           >
             {segment.text}
           </a>
@@ -171,7 +171,7 @@ export default function MarkdownRenderer({ content }) {
   const blocks = useMemo(() => parseMarkdown(content), [content]);
 
   return (
-    <div className="space-y-6 rounded-2xl border border-red-800/60 bg-gradient-to-br from-black/80 via-red-950/50 to-orange-950/60 p-6 text-base leading-relaxed text-stone-100 shadow-lg shadow-black/40">
+    <div className="space-y-6 rounded-2xl border border-neutral-200 bg-white p-6 text-base leading-relaxed text-neutral-900 shadow-[0_12px_36px_rgba(0,0,0,0.08)]">
       {blocks.map((block, index) => {
         if (block.type === "heading") {
           const Tag = `h${Math.min(block.level, 3)}`;
@@ -183,7 +183,7 @@ export default function MarkdownRenderer({ content }) {
           return (
             <Tag
               key={index}
-              className={`font-semibold tracking-tight text-orange-100 drop-shadow-sm ${sizes[Math.min(block.level, 3)]}`}
+              className={`font-semibold tracking-tight text-neutral-900 ${sizes[Math.min(block.level, 3)]}`}
             >
               {renderInline(block.text)}
             </Tag>
@@ -192,7 +192,7 @@ export default function MarkdownRenderer({ content }) {
 
         if (block.type === "paragraph") {
           return (
-            <p key={index} className="text-stone-200/95">
+            <p key={index} className="text-neutral-700">
               {renderInline(block.text)}
             </p>
           );
@@ -202,7 +202,7 @@ export default function MarkdownRenderer({ content }) {
           return (
             <ul
               key={index}
-              className="list-disc space-y-2 pl-5 text-stone-100 marker:text-orange-300"
+              className="list-disc space-y-2 pl-5 text-neutral-800 marker:text-red-600"
             >
               {block.items.map((item, itemIndex) => (
                 <li key={itemIndex}>{renderInline(item)}</li>
@@ -215,7 +215,7 @@ export default function MarkdownRenderer({ content }) {
           return (
             <blockquote
               key={index}
-              className="border-l-4 border-orange-500/70 bg-black/30 px-4 py-3 text-stone-200"
+              className="border-l-4 border-red-600/80 bg-neutral-50 px-4 py-3 text-neutral-800"
             >
               {renderInline(block.text)}
             </blockquote>
@@ -226,7 +226,7 @@ export default function MarkdownRenderer({ content }) {
           return (
             <pre
               key={index}
-              className="overflow-x-auto rounded-xl border border-red-800/70 bg-black/80 p-4 text-sm text-orange-100 shadow-inner shadow-black/40"
+              className="overflow-x-auto rounded-xl border border-neutral-200 bg-neutral-950/[0.03] p-4 text-sm text-neutral-900 shadow-inner shadow-black/10"
             >
               <code>{block.code}</code>
             </pre>

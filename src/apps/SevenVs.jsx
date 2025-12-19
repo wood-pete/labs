@@ -486,22 +486,22 @@ export default function SevenVsApp() {
   }, [memo, todayDisplay]);
 
   return (
-    <div className="flex min-h-[70vh] flex-col gap-6 bg-gradient-to-br from-black/70 via-red-950/70 to-orange-900/70 p-5 sm:p-7">
+    <div className="flex min-h-[70vh] flex-col gap-6 bg-gradient-to-br from-white via-neutral-50 to-neutral-100 p-5 sm:p-7">
       <div className="flex flex-wrap items-center gap-2">
         <Link
           to="/"
-          className="inline-flex h-7 items-center justify-center rounded-full border border-orange-400/70 bg-black/70 px-3 text-[9px] font-semibold uppercase tracking-[0.24em] text-orange-200 shadow shadow-black/40 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black sm:h-8 sm:px-3 sm:text-[10px]"
+          className="inline-flex h-7 items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 px-3 text-[9px] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_4px_12px_rgba(0,0,0,0.12)] transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:h-8 sm:px-3 sm:text-[10px]"
         >
           Home
         </Link>
-        <h2 className="text-2xl font-semibold text-orange-100 sm:text-3xl">
+        <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">
           Executive Memo Lab: The 7 V&apos;s Diagnostic
         </h2>
       </div>
 
-      <section className="rounded-3xl border border-red-800/70 bg-black/60 p-4 shadow-xl shadow-red-900/40 backdrop-blur">
-        <div className="flex flex-wrap items-center gap-2 text-[11px] text-orange-200/80">
-          <span className="rounded-full border border-orange-500/60 bg-orange-500/10 px-2 py-1">
+      <section className="rounded-3xl border border-neutral-200 bg-white p-4 shadow-[0_12px_32px_rgba(0,0,0,0.06)]">
+        <div className="flex flex-wrap items-center gap-2 text-[11px] text-neutral-700">
+          <span className="rounded-full border border-neutral-300 bg-neutral-50 px-2 py-1">
             {saveStatus}
           </span>
           <button
@@ -509,27 +509,27 @@ export default function SevenVsApp() {
             onClick={handleDownloadPdf}
             disabled={isGeneratingPdf}
             aria-busy={isGeneratingPdf}
-            className="rounded-full border border-orange-400/70 bg-orange-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-orange-200 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:cursor-not-allowed disabled:border-orange-900/60 disabled:text-orange-700/70 disabled:hover:border-orange-900/60 disabled:hover:text-orange-700/70"
+            className="rounded-full border border-neutral-900 bg-neutral-900 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-neutral-500"
           >
             {isGeneratingPdf ? "Creating..." : "Create PDF"}
           </button>
           <button
             type="button"
             onClick={() => setShowResetConfirm(true)}
-            className="rounded-full border border-red-700/70 bg-black/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-red-200/90 transition hover:border-red-500 hover:text-red-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="rounded-full border border-red-600/70 bg-red-50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-red-700 transition hover:border-red-600 hover:bg-red-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             Reset Draft
           </button>
         </div>
       </section>
 
-      <section className="grid gap-6 rounded-3xl border border-red-800/70 bg-black/60 p-6 shadow-xl shadow-red-900/40 backdrop-blur">
-        <header className="grid gap-3 text-sm text-stone-200 sm:text-base">
+      <section className="grid gap-6 rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_16px_48px_rgba(0,0,0,0.08)]">
+        <header className="grid gap-3 text-sm text-neutral-700 sm:text-base">
           <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <p className="text-xs uppercase tracking-[0.3em] text-orange-300/80">
+            <p className="text-xs uppercase tracking-[0.3em] text-red-600">
               Executive memo header
             </p>
-            <span className="text-[11px] uppercase tracking-[0.25em] text-orange-200/70">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-neutral-600">
               Date: {todayDisplay}
             </span>
           </div>
@@ -551,11 +551,11 @@ export default function SevenVsApp() {
 
       </section>
 
-      <section className="grid gap-6 rounded-3xl border border-red-800/70 bg-black/60 p-6 shadow-xl shadow-red-900/40 backdrop-blur">
-        <h3 className="text-xl font-semibold text-orange-200 sm:text-2xl">
+      <section className="grid gap-6 rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_16px_48px_rgba(0,0,0,0.08)]">
+        <h3 className="text-xl font-semibold text-neutral-900 sm:text-2xl">
           The 7 V&apos;s Diagnostic Canvas
         </h3>
-        <p className="text-sm text-stone-200 sm:text-base">
+        <p className="text-sm text-neutral-700 sm:text-base">
           For each dimension, capture the core issue, describe the business
           impact, and propose a focused fix. Tap the clue button if you need a
           nudge from the case study.
@@ -571,23 +571,23 @@ export default function SevenVsApp() {
               <div key={key} className="space-y-4">
                 <article
                   className={[
-                    "rounded-2xl border border-red-800/60 bg-black/50 p-4 shadow-inner shadow-black/30 transition sm:p-5",
-                    isOpen ? "ring-1 ring-orange-400/40 bg-black/75" : "",
+                    "rounded-2xl border border-neutral-200 bg-neutral-50 p-4 shadow-inner shadow-black/5 transition sm:p-5",
+                    isOpen ? "ring-1 ring-red-600/40 bg-white" : "",
                   ].join(" ")}
                 >
                   <button
                     type="button"
                     onClick={() => togglePanel(key)}
-                    className="flex w-full items-center justify-between gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    className="flex w-full items-center justify-between gap-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                     aria-expanded={isOpen}
                     aria-controls={`${key}-panel`}
                   >
-                    <span className="text-lg font-semibold text-orange-100">
+                    <span className="text-lg font-semibold text-neutral-900">
                       {label}
                     </span>
                     <span
                       className={[
-                        "inline-flex h-6 w-6 items-center justify-center rounded-full border border-orange-400/60 text-orange-200 transition-transform duration-200",
+                        "inline-flex h-6 w-6 items-center justify-center rounded-full border border-neutral-900 text-neutral-900 transition-transform duration-200",
                         "transform",
                         isOpen ? "rotate-180" : "",
                       ].join(" ")}
@@ -607,7 +607,7 @@ export default function SevenVsApp() {
                           <button
                             type="button"
                             onClick={() => toggleExplain(key)}
-                            className="inline-flex h-7 items-center justify-center rounded-full border border-orange-400/70 bg-orange-500/10 px-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-orange-200 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                            className="inline-flex h-7 items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 px-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-white transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                             aria-expanded={openExplain === key}
                             aria-label={`Explain ${label}`}
                           >
@@ -617,14 +617,14 @@ export default function SevenVsApp() {
                         <button
                           type="button"
                           onClick={() => toggleClue(key)}
-                          className="rounded-full border border-orange-500/70 bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-orange-200 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                          className="rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-800 transition hover:border-red-600 hover:text-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                         >
                           {isClueOpen ? "Hide clue" : "Show clue"}
                         </button>
                       </div>
 
                       {isClueOpen ? (
-                        <ul className="grid gap-1 rounded-xl border border-orange-500/40 bg-orange-500/10 p-3 text-xs text-orange-100">
+                        <ul className="grid gap-1 rounded-xl border border-neutral-200 bg-neutral-50 p-3 text-xs text-neutral-700">
                           {clue.map((hint, hintIndex) => (
                             <li key={hintIndex} className="leading-relaxed">
                               • {hint}
@@ -666,7 +666,7 @@ export default function SevenVsApp() {
                   ) : null}
                 </article>
                 {index < vsConfig.length - 1 ? (
-                  <div className="h-1 rounded-full bg-gradient-to-r from-transparent via-red-900/70 to-transparent opacity-80" />
+                  <div className="h-1 rounded-full bg-gradient-to-r from-transparent via-red-600/40 to-transparent opacity-80" />
                 ) : null}
               </div>
             );
@@ -674,14 +674,14 @@ export default function SevenVsApp() {
         </div>
       </section>
 
-      <section className="grid gap-3 rounded-3xl border border-red-800/70 bg-black/60 p-6 shadow-xl shadow-red-900/40 backdrop-blur">
-        <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-orange-300/80">
+      <section className="grid gap-3 rounded-3xl border border-neutral-200 bg-white p-6 shadow-[0_16px_48px_rgba(0,0,0,0.08)]">
+        <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-red-600">
           <span>Closing recommendations & next steps</span>
           <div className="flex gap-2">
             <button
               type="button"
               onClick={handleClosingWrite}
-              className="rounded-full border border-orange-400/70 bg-orange-500/10 px-3 py-1 text-[10px] font-semibold tracking-[0.24em] text-orange-200 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black disabled:cursor-not-allowed disabled:border-orange-900/70 disabled:text-orange-700/70 disabled:hover:border-orange-900/70 disabled:hover:text-orange-700/70"
+              className="rounded-full border border-neutral-900 bg-neutral-900 px-3 py-1 text-[10px] font-semibold tracking-[0.24em] text-white transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:border-neutral-200 disabled:bg-neutral-200 disabled:text-neutral-500"
               disabled={closingPrefilled}
             >
               Write it
@@ -689,7 +689,7 @@ export default function SevenVsApp() {
             <button
               type="button"
               onClick={() => setShowClosingTip(true)}
-              className="rounded-full border border-orange-400/70 bg-orange-500/10 px-3 py-1 text-[10px] font-semibold tracking-[0.24em] text-orange-200 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+              className="rounded-full border border-neutral-300 bg-neutral-50 px-3 py-1 text-[10px] font-semibold tracking-[0.24em] text-neutral-800 transition hover:border-red-600 hover:text-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               Suggestions
             </button>
@@ -699,7 +699,7 @@ export default function SevenVsApp() {
           value={memo.closing}
           onChange={(event) => handleFieldChange("closing", event.target.value)}
           rows={6}
-          className="rounded-2xl border border-red-800/40 bg-black/70 px-4 py-3 text-sm text-stone-100 shadow-inner shadow-black/20 outline-none transition focus:border-orange-400/80 focus:ring-2 focus:ring-orange-400/30"
+          className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 shadow-inner shadow-black/10 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-600/40"
           placeholder="Outline the immediate actions the CEO and board should approve, and flag any strategic bets for Project Helix."
         />
       </section>
@@ -727,7 +727,7 @@ export default function SevenVsApp() {
       <button
         type="button"
         onClick={() => setShowCompanyProfile(true)}
-        className="fixed bottom-6 right-6 flex h-14 w-14 items-center justify-center rounded-full border border-orange-400/80 bg-gradient-to-br from-orange-500 via-red-600 to-red-800 text-2xl text-orange-100 shadow-lg shadow-red-900/50 transition hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black sm:h-16 sm:w-16"
+        className="fixed bottom-6 right-6 flex h-14 w-14 items-center justify-center rounded-full border border-red-600 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 text-2xl text-white shadow-[0_10px_28px_rgba(0,0,0,0.35)] transition hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white sm:h-16 sm:w-16"
       >
         <span className="animate-pulse text-xl sm:text-2xl">🏢</span>
       </button>
@@ -741,13 +741,13 @@ export default function SevenVsApp() {
 
 function MemoField({ label, value, onChange, placeholder }) {
   return (
-    <label className="grid gap-2 text-xs uppercase tracking-[0.3em] text-orange-300/80">
+    <label className="grid gap-2 text-xs uppercase tracking-[0.3em] text-red-600">
       {label}
       <input
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        className="rounded-2xl border border-red-800/40 bg-black/70 px-4 py-3 text-sm text-stone-100 shadow-inner shadow-black/20 outline-none transition focus:border-orange-400/80 focus:ring-2 focus:ring-orange-400/30"
+        className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 shadow-inner shadow-black/10 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-600/30"
       />
     </label>
   );
@@ -767,14 +767,14 @@ function VsField({ label, value, onChange, placeholder, helpText }) {
   };
 
   return (
-    <div className="grid gap-2 text-xs uppercase tracking-[0.25em] text-orange-300/80">
+    <div className="grid gap-2 text-xs uppercase tracking-[0.25em] text-red-600">
       <div className="flex items-center gap-2">
         <span>{label}</span>
         {helpText ? (
           <button
             type="button"
             onClick={handleHelp}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-orange-400/80 bg-orange-500/10 text-orange-100 transition hover:border-orange-300 hover:text-orange-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 text-white transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             title="Write the response for me"
           >
             <PencilIcon className="h-5 w-5" />
@@ -787,7 +787,7 @@ function VsField({ label, value, onChange, placeholder, helpText }) {
         rows={5}
         placeholder={placeholder}
         aria-label={label}
-        className="h-full rounded-2xl border border-red-800/40 bg-black/70 px-3 py-2 text-sm text-stone-100 shadow-inner shadow-black/20 outline-none transition focus:border-orange-400/80 focus:ring-2 focus:ring-orange-400/30"
+        className="h-full rounded-2xl border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm text-neutral-900 shadow-inner shadow-black/10 outline-none transition focus:border-red-600 focus:ring-2 focus:ring-red-600/30"
       />
     </div>
   );
@@ -847,34 +847,34 @@ function ChevronIcon({ className = "" }) {
 function ExplainModal({ title, description, onClose }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900/50 px-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="explain-modal-title"
     >
-      <div className="relative w-full max-w-md rounded-3xl border border-orange-500/50 bg-black/90 p-6 text-sm text-orange-100 shadow-2xl shadow-black/50">
+      <div className="relative w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-6 text-sm text-neutral-800 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
         <header className="flex items-start justify-between gap-3">
           <h4
             id="explain-modal-title"
-            className="text-lg font-semibold uppercase tracking-[0.2em] text-orange-200"
+            className="text-lg font-semibold uppercase tracking-[0.2em] text-neutral-900"
           >
             {title} — Explained
           </h4>
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-orange-400/60 text-base font-semibold text-orange-100 transition hover:border-orange-300 hover:text-orange-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 text-base font-semibold text-neutral-800 transition hover:border-red-600 hover:text-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             aria-label="Close explanation"
           >
             ×
           </button>
         </header>
-        <p className="mt-4 leading-relaxed text-stone-200">{description}</p>
+        <p className="mt-4 leading-relaxed text-neutral-700">{description}</p>
         <div className="mt-6 flex justify-end">
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full border border-orange-400/70 bg-orange-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-orange-200 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="rounded-full border border-neutral-900 bg-neutral-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             Close
           </button>
@@ -887,29 +887,29 @@ function ExplainModal({ title, description, onClose }) {
 function ClosingTip({ onClose }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900/50 px-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="closing-tip-title"
     >
-      <div className="relative w-full max-w-lg rounded-3xl border border-orange-500/50 bg-black/90 p-6 text-sm text-orange-100 shadow-2xl shadow-black/50">
+      <div className="relative w-full max-w-lg rounded-3xl border border-neutral-200 bg-white p-6 text-sm text-neutral-800 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
         <header className="flex items-start justify-between gap-3">
           <h4
             id="closing-tip-title"
-            className="text-lg font-semibold uppercase tracking-[0.2em] text-orange-200"
+            className="text-lg font-semibold uppercase tracking-[0.2em] text-neutral-900"
           >
             Suggestions for the Memo Closing
           </h4>
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-orange-400/60 text-base font-semibold text-orange-100 transition hover:border-orange-300 hover:text-orange-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 text-base font-semibold text-neutral-800 transition hover:border-red-600 hover:text-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             aria-label="Close suggestions"
           >
             ×
           </button>
         </header>
-        <ul className="mt-4 grid gap-3 text-stone-200">
+        <ul className="mt-4 grid gap-3 text-neutral-700">
           <li>• Prioritise the top 2–3 investments to restore trust quickly.</li>
           <li>• Outline ownership, timeline, and cross-functional partners for Project Helix.</li>
           <li>• Highlight risk mitigation (e.g., governance, change management, funding).</li>
@@ -919,7 +919,7 @@ function ClosingTip({ onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-full border border-orange-400/70 bg-orange-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-orange-200 transition hover:border-orange-300 hover:text-orange-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="rounded-full border border-neutral-900 bg-neutral-900 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:border-red-600 hover:bg-red-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             Close
           </button>
@@ -932,40 +932,40 @@ function ClosingTip({ onClose }) {
 function CompanyProfileModal({ onClose }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900/60 px-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="company-profile-title"
     >
-      <div className="relative h-[85vh] w-full max-w-3xl overflow-hidden rounded-3xl border border-orange-500/60 bg-black/95 shadow-2xl shadow-black/60">
-        <header className="flex items-center justify-between border-b border-orange-500/40 bg-black/60 px-6 py-4">
+      <div className="relative h-[85vh] w-full max-w-3xl overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-[0_20px_56px_rgba(0,0,0,0.2)]">
+        <header className="flex items-center justify-between border-b border-neutral-200 bg-neutral-50 px-6 py-4">
           <div>
             <h4
               id="company-profile-title"
-              className="text-lg font-semibold uppercase tracking-[0.25em] text-orange-200"
+              className="text-lg font-semibold uppercase tracking-[0.25em] text-neutral-900"
             >
               CircleConnect Company Brief
             </h4>
-            <p className="text-xs uppercase tracking-[0.3em] text-orange-300/80">
+            <p className="text-xs uppercase tracking-[0.3em] text-red-600">
               Project Helix Context
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-orange-400/70 text-base font-semibold text-orange-100 transition hover:border-orange-300 hover:text-orange-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-neutral-300 text-base font-semibold text-neutral-800 transition hover:border-red-600 hover:text-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             aria-label="Close company profile"
           >
             ×
           </button>
         </header>
 
-        <div className="h-full overflow-y-auto px-6 py-6 text-sm leading-relaxed text-stone-100 sm:text-base">
+        <div className="h-full overflow-y-auto px-6 py-6 text-sm leading-relaxed text-neutral-800 sm:text-base">
           <section className="space-y-2">
-            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">
+            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
               Snapshot
             </h5>
-            <ul className="space-y-1 text-orange-100">
+            <ul className="space-y-1 text-neutral-700">
               <li>🏢 Fictional Company: CircleConnect (CRCLCNCT / CRCL)</li>
               <li>Industry: Connected Retail &amp; Smart Consumer Services</li>
               <li>Headquarters: Manchester, UK</li>
@@ -975,7 +975,7 @@ function CompanyProfileModal({ onClose }) {
           </section>
 
           <section className="mt-6 space-y-3">
-            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">
+            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
               Company Overview
             </h5>
             <p>
@@ -998,7 +998,7 @@ function CompanyProfileModal({ onClose }) {
           </section>
 
           <section className="mt-6 space-y-3">
-            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">
+            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
               The Situation
             </h5>
             <p>
@@ -1006,23 +1006,23 @@ function CompanyProfileModal({ onClose }) {
               On your very first day, you uncover a series of critical issues that
               sound all too familiar:
             </p>
-            <ul className="space-y-1 pl-4 text-orange-100">
+            <ul className="space-y-1 pl-4 text-neutral-700">
               <li>• The CEO no longer trusts the dashboards.</li>
               <li>• The CFO says financial and sales numbers don’t match across platforms.</li>
               <li>• The Marketing team claims their analytics are outdated and fragmented.</li>
               <li>• The Operations team still uses spreadsheets to reconcile store data manually.</li>
             </ul>
-            <p className="italic text-stone-200">
+            <p className="italic text-neutral-700">
               The board’s message is blunt: “Our data is scattered, our reports are inconsistent,
               and nobody trusts the numbers. Fix it.”
             </p>
           </section>
 
           <section className="mt-6 space-y-3">
-            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">
+            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
               Data Landscape (Current State)
             </h5>
-            <ul className="space-y-2 pl-4 text-orange-100">
+            <ul className="space-y-2 pl-4 text-neutral-700">
               <li>• Systems: SAP ERP, Salesforce CRM, Shopify Commerce, Oracle Retail, IoT telemetry feeds, and dozens of CSV exports from regional systems.</li>
               <li>• Data Warehouse: Azure Synapse, populated nightly via batch ETL.</li>
               <li>• Data Lake: Raw object storage on AWS S3 with minimal governance and no schema enforcement.</li>
@@ -1033,10 +1033,10 @@ function CompanyProfileModal({ onClose }) {
           </section>
 
           <section className="mt-6 space-y-3">
-            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-300">
+            <h5 className="text-sm font-semibold uppercase tracking-[0.3em] text-red-600">
               Symptoms Noted by Leadership
             </h5>
-            <ol className="space-y-2 pl-4 text-orange-100">
+            <ol className="space-y-2 pl-4 text-neutral-700">
               <li>1. Dashboards are 24–36 hours behind real-time sales activity.</li>
               <li>2. Revenue totals differ by 5–10% between systems.</li>
               <li>3. Duplicate customer and product records exist across multiple sources.</li>
@@ -1054,19 +1054,19 @@ function CompanyProfileModal({ onClose }) {
 function ResetConfirmModal({ onCancel, onConfirm }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-neutral-900/60 px-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="reset-confirm-title"
     >
-      <div className="w-full max-w-sm rounded-3xl border border-red-700/60 bg-black/90 p-6 text-sm text-stone-100 shadow-2xl shadow-black/60">
+      <div className="w-full max-w-sm rounded-3xl border border-neutral-200 bg-white p-6 text-sm text-neutral-800 shadow-[0_18px_48px_rgba(0,0,0,0.18)]">
         <h4
           id="reset-confirm-title"
-          className="text-lg font-semibold uppercase tracking-[0.3em] text-orange-200"
+          className="text-lg font-semibold uppercase tracking-[0.3em] text-neutral-900"
         >
           Reset Draft?
         </h4>
-        <p className="mt-3 text-sm leading-relaxed text-stone-200">
+        <p className="mt-3 text-sm leading-relaxed text-neutral-700">
           This will clear every field and remove your saved memo from this
           browser. You cannot undo this action.
         </p>
@@ -1074,14 +1074,14 @@ function ResetConfirmModal({ onCancel, onConfirm }) {
           <button
             type="button"
             onClick={onCancel}
-            className="rounded-full border border-stone-500/70 bg-black/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-stone-200 transition hover:border-stone-300 hover:text-stone-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-300 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="rounded-full border border-neutral-300 bg-neutral-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-800 transition hover:border-red-600 hover:text-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             Cancel
           </button>
           <button
             type="button"
             onClick={onConfirm}
-            className="rounded-full border border-red-600/80 bg-red-700/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-red-100 transition hover:border-red-400 hover:text-red-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+            className="rounded-full border border-red-600 bg-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-red-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             Reset Now
           </button>

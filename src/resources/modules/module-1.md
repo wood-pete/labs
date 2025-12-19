@@ -12,3 +12,6 @@ A fast welcome to the Academy for Data 2026: what to expect, how to navigate the
 - Preview the flow of the program and where to find everything
 - Set your intent for the cohort and how you will practice
 - Note where you can speed-run or go deep based on your goals
+
+Gte rid of this link!
+
