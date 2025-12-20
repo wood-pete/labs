@@ -1,5 +1,19 @@
 import { useMemo } from "react";
 
+// Pre-bundle any local attachment images so markdown image paths resolve correctly.
+const attachmentLookup = Object.entries(
+  import.meta.glob("../../resources/modules/Attachments/*", {
+    eager: true,
+    import: "default",
+  }),
+).reduce((acc, [path, url]) => {
+  const filename = path.split("/").pop();
+  if (filename) {
+    acc[filename] = url;
+  }
+  return acc;
+}, {});
+
 function parseInlineSegments(text) {
   const segments = [];
   const regex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|`([^`]+)`|\*([^*]+)\*/g;
@@ -83,6 +97,15 @@ function parseMarkdown(content) {
       return;
     }
 
+    const imageMatch = /^!\[([^\]]*)\]\(([^)]+)\)$/.exec(trimmed);
+    if (imageMatch) {
+      flushParagraph();
+      flushList();
+      const [, alt, src] = imageMatch;
+      blocks.push({ type: "image", alt, src });
+      return;
+    }
+
     if (trimmed === "") {
       flushParagraph();
       flushList();
@@ -123,6 +146,23 @@ function parseMarkdown(content) {
   flushCode();
 
   return blocks;
+}
+
+function resolveImageSrc(src) {
+  if (/^(https?:)?\/\//.test(src) || src.startsWith("data:")) {
+    return src;
+  }
+
+  if (src.startsWith("/")) {
+    return src;
+  }
+
+  const filename = src.split("/").pop();
+  if (filename && attachmentLookup[filename]) {
+    return attachmentLookup[filename];
+  }
+
+  return src;
 }
 
 function renderInline(text) {
@@ -230,6 +270,28 @@ export default function MarkdownRenderer({ content }) {
             >
               <code>{block.code}</code>
             </pre>
+          );
+        }
+
+        if (block.type === "image") {
+          const resolvedSrc = resolveImageSrc(block.src);
+          return (
+            <figure
+              key={index}
+              className="inline-block rounded-2xl border border-neutral-200 bg-neutral-50 shadow-inner shadow-black/5"
+            >
+              <img
+                src={resolvedSrc}
+                alt={block.alt || ""}
+                className="block"
+                loading="lazy"
+              />
+              {block.alt ? (
+                <figcaption className="px-4 py-3 text-sm text-neutral-600">
+                  {block.alt}
+                </figcaption>
+              ) : null}
+            </figure>
           );
         }
 
