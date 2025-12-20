@@ -12,3 +12,5 @@ Map your career direction, clarify what unforgettable impact looks like, and set
 - Draft or refine your career north star
 - Identify the skills and proof-points you need to become memorable
 - Capture homework outcomes you can revisit later
+
+new update to module 2
