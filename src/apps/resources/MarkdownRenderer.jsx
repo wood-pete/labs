@@ -276,22 +276,13 @@ export default function MarkdownRenderer({ content }) {
         if (block.type === "image") {
           const resolvedSrc = resolveImageSrc(block.src);
           return (
-            <figure
+            <img
               key={index}
-              className="inline-block rounded-2xl border border-neutral-200 bg-neutral-50 shadow-inner shadow-black/5"
-            >
-              <img
-                src={resolvedSrc}
-                alt={block.alt || ""}
-                className="block"
-                loading="lazy"
-              />
-              {block.alt ? (
-                <figcaption className="px-4 py-3 text-sm text-neutral-600">
-                  {block.alt}
-                </figcaption>
-              ) : null}
-            </figure>
+              src={resolvedSrc}
+              alt={block.alt || ""}
+              className="block"
+              loading="lazy"
+            />
           );
         }
 
